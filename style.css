@@ -1754,7 +1754,7 @@ body {
     min-height: 700px;
     height: calc(100vh - 28px);
 
-    background-image: url("image/photoaccueil.png");
+    background-image: url("img/photoaccueil.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
