@@ -1,0 +1,2003 @@
+/* ============================================================
+   404 ART : FEUILLE DE STYLE UNIQUE
+   ============================================================
+
+   SOMMAIRE
+   1. Polices, variables et base commune
+   2. Accueil                       (index.html)
+   3. Actualités                    (actualités.html)
+   4. Pages intérieures             (expositions, visite, à propos, contact)
+
+   COMMENT ÇA MARCHE
+   Chaque page a une classe sur sa balise <body>. Les règles de chaque
+   partie ne s'appliquent qu'à leur page, ce qui évite qu'une règle
+   d'une page change l'aspect d'une autre :
+
+     index.html        <body class="page-accueil">
+     actualités.html   <body class="page-actualites">
+     expositions.html  <body class="page-interne page-expositions">
+     visite.html       <body class="page-interne page-visite">
+     a_propos.html     <body class="page-interne page-apropos">
+     contact.html      <body class="page-interne page-contact">
+
+   Pour un réglage propre à une seule page, écrire par exemple :
+     body.page-visite .site-navigation a { ... }
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
+
+/* ============================================================
+   1. VARIABLES ET BASE COMMUNE
+   ============================================================ */
+
+:root {
+    /* Couleur de TOUS les menus du site : à changer ici uniquement */
+    --menu-color: #000;
+    --police: "Cormorant Garamond", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--police);
+}
+
+button,
+input {
+    font-family: inherit;
+}
+
+/* ============================================================
+   2. ACCUEIL (index.html)
+   ============================================================ */
+
+body.page-accueil {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body.page-accueil .frame {
+    background-color: #f7f5f0;
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+
+body.page-accueil .frame .capture-decran {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+body.page-accueil .frame .text-wrapper {
+    position: absolute;
+    top: 4.8%;
+    left: 3.6%;
+    width: auto;
+    font-family: var(--police);
+    font-weight: 300;
+    color: #000;
+    font-size: clamp(38px, 4.45vw, 64px);
+    line-height: 1;
+    z-index: 2;
+}
+
+body.page-accueil .frame .text-wrapper-3,
+body.page-accueil .frame .text-wrapper-4,
+body.page-accueil .frame .text-wrapper-5,
+body.page-accueil .frame .text-wrapper-6 {
+    position: absolute;
+    top: 6%;
+    width: auto;
+    font-family: var(--police);
+    font-weight: 500;
+    color: var(--menu-color);
+    font-size: clamp(13px, 2.1vw, 32px);
+    white-space: nowrap;
+    z-index: 2;
+    text-decoration: none;
+}
+
+body.page-accueil .frame .text-wrapper-3 {
+    left: 42.8%;
+}
+
+body.page-accueil .frame .text-wrapper-6 {
+    left: 57.9%;
+}
+
+body.page-accueil .frame .text-wrapper-4 {
+    left: 71.7%;
+}
+
+body.page-accueil .frame .text-wrapper-5 {
+    left: 84.4%;
+}
+
+body.page-accueil .frame .text-wrapper-2 {
+    position: absolute;
+    top: 660px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 90%;
+    font-family: var(--police);
+    font-weight: 400;
+    color: #000;
+    font-size: clamp(20px, 2.1vw, 39px);
+    text-align: center;
+    z-index: 2;
+}
+
+body.page-accueil .arrow {
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    font-size: 45px;
+    font-weight: 900;
+    line-height: 1;
+    color: #000;
+    text-decoration: none;
+    z-index: 10;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+body.page-accueil .arrow:hover {
+    transform: translate(-50%, 8px);
+}
+
+/* TABLETTES */
+
+@media screen and (max-width: 1024px) {
+    body.page-accueil .frame .text-wrapper {
+        font-size: 48px;
+    }
+
+    body.page-accueil .frame .text-wrapper-3,
+    body.page-accueil .frame .text-wrapper-4,
+    body.page-accueil .frame .text-wrapper-5,
+    body.page-accueil .frame .text-wrapper-6 {
+        font-size: 16px;
+    }
+
+    body.page-accueil .frame .text-wrapper-3 {
+        left: 38%;
+    }
+
+    body.page-accueil .frame .text-wrapper-6 {
+        left: 53%;
+    }
+
+    body.page-accueil .frame .text-wrapper-4 {
+        left: 69%;
+    }
+
+    body.page-accueil .frame .text-wrapper-5 {
+        left: 84%;
+    }
+}
+
+/* TELEPHONES */
+
+@media screen and (max-width: 600px) {
+    body.page-accueil .frame {
+        height: 100svh;
+        min-height: 550px;
+    }
+
+    body.page-accueil .frame .capture-decran {
+        object-position: center;
+    }
+
+    /* LOGO */
+
+    body.page-accueil .frame .text-wrapper {
+        top: 25px;
+        left: 20px;
+        font-size: 42px;
+    }
+
+    /* MENU */
+
+    body.page-accueil .frame .text-wrapper-3,
+    body.page-accueil .frame .text-wrapper-4,
+    body.page-accueil .frame .text-wrapper-5,
+    body.page-accueil .frame .text-wrapper-6 {
+        top: 100px;
+        font-size: 12px;
+    }
+
+    body.page-accueil .frame .text-wrapper-3 {
+        left: 5%;
+    }
+
+    body.page-accueil .frame .text-wrapper-6 {
+        left: 29%;
+    }
+
+    body.page-accueil .frame .text-wrapper-4 {
+        left: 56%;
+    }
+
+    body.page-accueil .frame .text-wrapper-5 {
+        left: 82%;
+    }
+
+    /* TEXTE CENTRAL */
+
+    body.page-accueil .frame .text-wrapper-2 {
+        top: 76%;
+        width: 90%;
+        font-size: 19px;
+        white-space: normal;
+    }
+
+    /* FLECHE */
+
+    body.page-accueil .arrow {
+        bottom: 5%;
+        font-size: 38px;
+    }
+}
+
+/* PETITS TELEPHONES */
+
+@media screen and (max-width: 380px) {
+    body.page-accueil .frame .text-wrapper {
+        font-size: 36px;
+    }
+
+    body.page-accueil .frame .text-wrapper-3,
+    body.page-accueil .frame .text-wrapper-4,
+    body.page-accueil .frame .text-wrapper-5,
+    body.page-accueil .frame .text-wrapper-6 {
+        font-size: 10px;
+    }
+
+    body.page-accueil .frame .text-wrapper-2 {
+        font-size: 17px;
+    }
+}
+
+body.page-accueil .frame .text-wrapper-3,
+body.page-accueil .frame .text-wrapper-4,
+body.page-accueil .frame .text-wrapper-5,
+body.page-accueil .frame .text-wrapper-6 {
+    position: absolute;
+    /* Garde ici tes autres propriétés actuelles */
+}
+
+body.page-accueil .frame .text-wrapper-3::after,
+body.page-accueil .frame .text-wrapper-4::after,
+body.page-accueil .frame .text-wrapper-5::after,
+body.page-accueil .frame .text-wrapper-6::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 100%;
+    height: 2px;
+    background: var(--menu-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+}
+
+body.page-accueil .frame .text-wrapper-3:hover::after,
+body.page-accueil .frame .text-wrapper-4:hover::after,
+body.page-accueil .frame .text-wrapper-5:hover::after,
+body.page-accueil .frame .text-wrapper-6:hover::after {
+    transform: scaleX(1);
+}
+
+
+
+/* ============================================================
+   3. ACTUALITÉS (actualités.html)
+   ============================================================ */
+
+:root {
+    --bg-color: #D8D2C8;
+    --text-color: #141413;
+    --text-muted: #2B2A28;
+    --police-texte:  "Cormorant Garamond", serif;
+    --police-titres: "Cormorant Garamond", serif;
+}
+
+body.page-actualites {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--police);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body.page-actualites header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 36px 3.5vw 64px 3.5vw;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+body.page-actualites .logo {
+    font-family: var(--police);
+    font-size: clamp(2.2rem, 3.2vw, 3rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+body.page-actualites nav {
+    width: 50%;
+}
+
+body.page-actualites nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 100%;
+    align-items: center;
+}
+
+body.page-actualites nav a {
+    text-decoration: none;
+    color: var(--menu-color);
+    font-family: var(--police);
+    font-size: clamp(1rem, 1.25vw, 1.22rem);
+    font-weight: 550;
+    position: relative;
+    padding-bottom: 6px;
+    transition: opacity 0.25s ease;
+}
+
+body.page-actualites nav a:hover {
+    opacity: 0.75;
+}
+
+body.page-actualites nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--menu-color);
+    transition: width 0.3s ease;
+}
+
+body.page-actualites nav a:hover::after,
+body.page-actualites nav a:focus-visible::after {
+    width: 100%;
+}
+
+body.page-actualites main {
+    padding: 0 3.5vw 80px 3.5vw;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+body.page-actualites .articles-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: clamp(2.5rem, 8.5vw, 9rem);
+    align-items: start;
+}
+
+body.page-actualites .article-card {
+    display: flex;
+    flex-direction: column;
+}
+
+body.page-actualites .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+}
+
+body.page-actualites .image-wrapper {
+    width: 100%;
+    aspect-ratio: 1.42 / 1;
+    overflow: hidden;
+    background-color: #cfc7b9;
+    margin-bottom: 14px;
+}
+
+body.page-actualites .image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body.page-actualites .card-link:hover .image-wrapper img {
+    transform: scale(1.035);
+}
+
+body.page-actualites .meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: clamp(0.85rem, 1vw, 0.98rem);
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+
+body.page-actualites .article-title {
+    font-family: var(--police);
+    font-size: clamp(1.9rem, 2.75vw, 2.65rem);
+    font-weight: 400;
+    line-height: 1.14;
+    color: var(--text-color);
+    margin-bottom: 18px;
+    max-width: 92%;
+    transition: opacity 0.25s ease;
+}
+
+body.page-actualites .card-link:hover .article-title {
+    opacity: 0.78;
+}
+
+body.page-actualites .read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--police);
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
+    color: var(--text-color);
+    width: fit-content;
+}
+
+body.page-actualites .read-more svg {
+    width: 24px;
+    height: 14px;
+    stroke: var(--text-color);
+    stroke-width: 1.2;
+    fill: none;
+    transition: transform 0.3s ease;
+}
+
+body.page-actualites .card-link:hover .read-more svg {
+    transform: translateX(7px);
+}
+
+body.page-actualites .modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 20, 19, 0.55);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+}
+
+body.page-actualites .modal-overlay:target {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.page-actualites .modal-backdrop-close {
+    position: fixed;
+    inset: 0;
+    cursor: default;
+}
+
+body.page-actualites .modal-content {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    max-width: 720px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: clamp(24px, 4vw, 48px);
+    position: relative;
+    z-index: 2;
+    transform: translateY(20px);
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(20, 20, 19, 0.15);
+}
+
+body.page-actualites .modal-overlay:target .modal-content {
+    transform: translateY(0);
+}
+
+body.page-actualites .close-btn {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--text-color);
+    line-height: 1;
+    padding: 4px 8px;
+    transition: opacity 0.2s ease;
+}
+
+body.page-actualites .close-btn:hover {
+    opacity: 0.6;
+}
+
+body.page-actualites .modal-img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    margin: 16px 0 20px 0;
+}
+
+body.page-actualites .modal-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    padding-right: 28px;
+}
+
+body.page-actualites .modal-title {
+    font-family: var(--police);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+body.page-actualites .modal-body {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+@media (max-width: 960px) {
+    body.page-actualites header {
+        padding: 28px 5vw 44px 5vw;
+    }
+
+    body.page-actualites nav {
+        width: 62%;
+    }
+
+    body.page-actualites main {
+        padding: 0 5vw 60px 5vw;
+    }
+
+    body.page-actualites .articles-grid {
+        column-gap: 2.5rem;
+    }
+}
+
+@media (max-width: 720px) {
+    body.page-actualites header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding-bottom: 36px;
+    }
+
+    body.page-actualites nav {
+        width: 100%;
+    }
+
+    body.page-actualites nav ul {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+    }
+
+    body.page-actualites .articles-grid {
+        grid-template-columns: 1fr;
+        row-gap: 3.5rem;
+    }
+}
+
+
+
+/* ============================================================
+   4. PAGES INTÉRIEURES : EXPOSITIONS, VISITE 3D, À PROPOS, CONTACT
+   ============================================================ */
+
+/* ========================================
+   404 ART - PAGE DES EXPOSITIONS
+   ======================================== */
+
+/* IMPORTATION DES POLICES */
+
+/* ========================================
+   PARAMÈTRES GÉNÉRAUX
+   ======================================== */
+:root {
+    --bg-color: #D8D2C8;
+    --text-color: #141413;
+    --text-muted: #2B2A28;
+    --police-texte:  "Cormorant Garamond", serif;
+    --police-titres: "Cormorant Garamond", serif;
+}
+
+body.page-interne {
+    background-color: #d8d2c8;
+    color: #000000;
+    font-family: var(--police);
+}
+
+body.page-interne .frame {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #d8d2c8;
+    padding: 32px 12px 15px;
+}
+
+/* ========================================
+   EN-TÊTE ET LOGO
+   ======================================== */
+
+body.page-interne header {
+    width: 100%;
+    height: 83px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Logo 404 ART */
+
+body.page-interne .frame .text-wrapper-8 {
+    font-family: var(--police);
+    font-size: 52px;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ========================================
+   MENU DE NAVIGATION
+   ======================================== */
+
+body.page-interne nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+body.page-interne nav a {
+    font-family: var(--police);
+    font-size: 27px;
+    font-weight: 500;
+    color: var(--menu-color);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+/* Effet au survol */
+
+body.page-interne nav a:hover {
+    opacity: 0.6;
+}
+
+/* Soulignement de la page active */
+
+/* Animation de la barre sous les éléments du menu */
+
+body.page-interne nav a {
+    position: relative;
+    text-decoration: none;
+}
+
+/* Barre invisible par défaut */
+
+body.page-interne nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--menu-color);
+
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+/* Apparition de la barre au survol */
+
+body.page-interne nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Disparition lorsque la souris quitte le mot */
+
+body.page-interne nav a:not(:hover)::after {
+    transform: scaleX(0);
+}
+
+/* Ancien soulignement en image */
+
+body.page-interne .frame .line {
+    display: none;
+}
+
+/* ========================================
+   CONTENU PRINCIPAL
+   ======================================== */
+
+body.page-interne main {
+    width: 100%;
+    margin-top: 32px;
+}
+
+body.page-interne section {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 54px;
+    width: 100%;
+}
+
+/* ========================================
+   IMAGES DES EXPOSITIONS
+   ======================================== */
+
+body.page-interne article {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Première image */
+
+body.page-interne .frame .rectangle {
+    width: 100%;
+    height: 445px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Deuxième image */
+
+body.page-interne .frame .img {
+    width: 100%;
+    height: 445px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ========================================
+   TITRES DES EXPOSITIONS
+   ======================================== */
+
+body.page-interne .frame .text-wrapper,
+body.page-interne .frame .text-wrapper-3 {
+    font-family: var(--police);  
+    font-size: 25px;
+    font-weight: 700;
+    color: #000000;
+    margin-top: 22px;
+    line-height: 1.3;
+}
+
+/* ========================================
+   NOMS DES ŒUVRES
+   ======================================== */
+
+body.page-interne .frame .div,
+body.page-interne .frame .text-wrapper-4 {
+    font-family: var(--police);  
+    font-size: 25px;
+    font-weight: 400;
+    font-style: italic;
+    color: #000000;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+/* ========================================
+   DATES DES EXPOSITIONS
+   ======================================== */
+
+body.page-interne .frame .p,
+body.page-interne .frame .text-wrapper-5 {
+    font-family: var(--police);  
+    font-size: 22px;
+    font-weight: 400;
+    color: #000000;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+/* ========================================
+   LIEUX DES EXPOSITIONS
+   ======================================== */
+
+body.page-interne .frame .text-wrapper-6,
+body.page-interne .frame .text-wrapper-7 {
+    font-family: var(--police);  
+    font-size: 19px;
+    font-weight: 300;
+    font-style: italic;
+    color: #55514b;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+/* ========================================
+   LIENS ET ACCESSIBILITÉ
+   ======================================== */
+
+body.page-interne .frame a:focus-visible {
+    outline: 2px solid #000000;
+    outline-offset: 5px;
+}
+
+/* ========================================
+   ADAPTATION AUX PETITS ÉCRANS
+   ======================================== */
+
+@media (max-width: 850px) {
+    body.page-interne header {
+        height: auto;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+    }
+
+    body.page-interne .frame .text-wrapper-8 {
+        font-size: 45px;
+    }
+
+    body.page-interne nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 18px;
+    }
+
+    body.page-interne nav a {
+        font-size: 18px;
+    }
+
+    body.page-interne main {
+        margin-top: 35px;
+    }
+
+    body.page-interne section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    body.page-interne .frame .rectangle,
+    body.page-interne .frame .img {
+        height: auto;
+        aspect-ratio: 1.25 / 1;
+    }
+}
+
+/* ========================================
+   ANIMATION INTERACTIVE DES PHOTOS
+   ======================================== */
+
+/* Préparation des images */
+
+body.page-interne .frame article img {
+    display: block;
+    position: relative;
+    z-index: 1;
+    cursor: pointer;
+
+    transition:
+    transform 0.4s ease,
+    filter 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+/* Effet au passage de la souris */
+
+body.page-interne .frame article img:hover {
+    transform: scale(1.04);
+    filter: brightness(1.08);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    z-index: 5;
+}
+
+/* ==========================================
+   404 ART - PAGE 3 : VISITE VIRTUELLE
+   CSS inspiré de la maquette Figma
+========================================== */
+
+/* IMPORTATION DES POLICES */
+
+/* ==========================================
+   1. PARAMÈTRES GÉNÉRAUX
+========================================== */
+:root {
+    --bg-color: #D8D2C8;
+    --text-color: #141413;
+    --text-muted: #2B2A28;
+    --police-texte:  "Cormorant Garamond", serif;
+    --police-titres: "Cormorant Garamond", serif;
+}
+
+body.page-interne {
+    width: 100%;
+    min-height: 100%;
+}
+
+body.page-interne {
+    background-color: #d8d2c8;
+    color: #000000;
+    font-family: var(--police);  
+}
+
+body.page-interne .frame {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* ========================================
+   EN-TÊTE ET LOGO
+   ======================================== */
+
+body.page-interne header {
+    width: 100%;
+    height: 83px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Logo 404 ART */
+
+body.page-interne .frame .text-wrapper-8 {
+    font-family: var(--police);   
+    font-size: 52px;
+    font-weight: 400;
+    color: #000000;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* ========================================
+   MENU DE NAVIGATION
+   ======================================== */
+
+body.page-interne nav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+body.page-interne nav a {
+    font-family: var(--police);  
+    font-size: 27px;
+    font-weight: 500;
+    color: var(--menu-color);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+/* Effet au survol */
+
+body.page-interne nav a:hover {
+    opacity: 0.6;
+}
+
+/* Soulignement de la page active */
+
+/* Animation de la barre sous les éléments du menu */
+
+body.page-interne nav a {
+    position: relative;
+    text-decoration: none;
+}
+
+/* Barre invisible par défaut */
+
+body.page-interne nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--menu-color);
+
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+/* Apparition de la barre au survol */
+
+body.page-interne nav a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Disparition lorsque la souris quitte le mot */
+
+body.page-interne nav a:not(:hover)::after {
+    transform: scaleX(0);
+}
+
+/* Ancien soulignement en image */
+
+body.page-interne .frame .line {
+    display: none;
+}
+
+/* ========================================
+   CONTENU PRINCIPAL
+   ======================================== */
+
+body.page-interne main {
+    width: 100%;
+    margin-top: 32px;
+}
+
+body.page-interne section {
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 54px;
+    width: 100%;
+}
+
+/* ==========================================
+   4. SECTION PRINCIPALE
+========================================== */
+
+body.page-interne main {
+    width: 100%;
+}
+
+body.page-interne .hero {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 138px);
+    min-height: 550px;
+    overflow: hidden;
+    background-color: #bdbbb7;
+}
+
+/* ==========================================
+   5. IMAGE PRINCIPALE
+========================================== */
+
+/* IMAGE AVEC EFFET PANORAMIQUE */
+
+body.page-interne .capture-decran {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 115%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transform: translateX(-7%);
+    transition: transform 5s ease-in-out;
+
+    pointer-events: none;
+}
+
+/* Déplacement de l'image au survol */
+
+body.page-interne .hero:hover .capture-decran {
+    transform: translateX(-13%);
+}
+
+/* ==========================================
+   6. TEXTE DE PRÉSENTATION
+========================================== */
+
+body.page-interne .hero-content {
+    position: absolute;
+    z-index: 2;
+    left: 3.5%;
+    top: 43%;
+    width: 430px;
+    max-width: 90%;
+    color: #000000;
+}
+
+/* Petit texte : Visite virtuelle */
+
+body.page-interne .hero-content .text-wrapper {
+    margin-bottom: 20px;
+    font-family: var(--police);  
+    font-size: 14px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.3;
+    color: #000000;
+}
+
+/* Grand titre */
+
+body.page-interne .hero-content .text-wrapper-2 {
+    max-width: 390px;
+    margin-bottom: 30px;
+    font-family: var(--police);   
+    font-size: 40px;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.12;
+    color: #000000;
+}
+
+/* ==========================================
+   7. BOUTON COMMENCER LA VISITE
+========================================== */
+
+/* BOUTON COMMENCER LA VISITE */
+
+body.page-interne .hero-content .rectangle {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 242px;
+    height: 55px;
+    min-width: 0;
+    padding: 0 13px;
+    margin: 0;
+    gap: 12px;
+    border: 1px solid #777;
+    border-radius: 0;
+    background: rgba(210, 210, 210, 0.35);
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+/* TEXTE DU BOUTON */
+
+body.page-interne .hero-content .text-wrapper-3 {
+    font-family: var(--police);  
+    font-size: 16px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1;
+    color: #000;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* FLÈCHE SIMPLE */
+
+body.page-interne .hero-content .rectangle::after {
+    content: "→";
+    display: block;
+    width: auto;
+    height: auto;
+    border: none;
+    background: none;
+    font-family: var(--police);
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1;
+    color: #000;
+    flex-shrink: 0;
+}
+
+/* ==========================================
+   8. PICTOGRAMME 360°
+========================================== */
+
+body.page-interne .hero .vector {
+    position: absolute;
+    top: 25px;
+    right: 3.5%;
+    z-index: 3;
+
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #000;
+}
+
+body.page-interne .hero .vector span {
+    font-family: var(--police);  
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+}
+
+/* Arc de cercle sous le 360 */
+
+body.page-interne .hero .vector span::after {
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 10px;
+    border-bottom: 2px solid #000;
+    border-radius: 0 0 50% 50%;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+}
+
+/* ==========================================
+   9. ADAPTATION AUX TABLETTES
+========================================== */
+
+@media screen and (max-width: 1000px) {
+    body.page-interne .site-header {
+        padding: 0 3%;
+        height: 110px;
+    }
+
+    body.page-interne .site-navigation {
+        gap: 20px;
+    }
+
+    body.page-interne .site-navigation a {
+        font-size: 14px;
+    }
+
+    body.page-interne .hero {
+        height: calc(100vh - 110px);
+    }
+
+    body.page-interne .hero-content .text-wrapper-2 {
+        font-size: 36px;
+    }
+}
+
+/* ==========================================
+   10. ADAPTATION AUX TÉLÉPHONES
+========================================== */
+
+@media screen and (max-width: 650px) {
+    body.page-interne .site-header {
+        height: auto;
+        min-height: 115px;
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    body.page-interne .site-header .div {
+        font-size: 30px;
+    }
+
+    body.page-interne .site-navigation {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    body.page-interne .site-navigation a {
+        font-size: 12px;
+    }
+
+    body.page-interne .hero {
+        height: calc(100vh - 115px);
+        min-height: 550px;
+    }
+
+    body.page-interne .capture-decran {
+        object-position: center;
+    }
+
+    body.page-interne .hero-content {
+        left: 6%;
+        top: 38%;
+        width: 85%;
+    }
+
+    body.page-interne .hero-content .text-wrapper {
+        font-size: 12px;
+    }
+
+    body.page-interne .hero-content .text-wrapper-2 {
+        font-size: 34px;
+        max-width: 300px;
+    }
+
+    body.page-interne .hero .vector {
+        top: 20px;
+        right: 6%;
+        width: 32px;
+        height: 32px;
+    }
+}
+
+/* ==========================================
+   404 ART — PAGE 5 : À PROPOS
+========================================== */
+
+/* ==========================================
+   1. PARAMÈTRES GÉNÉRAUX
+========================================== */
+
+body.page-interne {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body.page-interne {
+    background-color: #d8d2c8;
+    color: #000;
+    font-family: var(--police);  
+}
+
+body.page-interne .frame {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+}
+
+/* ==========================================
+   2. EN-TÊTE ET LOGO
+========================================== */
+
+body.page-interne .site-header {
+    width: 100%;
+    height: 138px;
+    padding: 0 2.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d8d2c8;
+}
+
+/* Logo 404 ART */
+
+body.page-interne .site-header .text-wrapper-8 {
+    font-family: var(--police);   
+    font-size: 52px;
+    font-weight: 400;
+    font-style: normal;
+    color: #000;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* ==========================================
+   3. MENU DE NAVIGATION
+========================================== */
+
+body.page-interne .site-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 35px;
+}
+
+/* Tous les liens */
+
+body.page-interne .site-navigation a {
+    position: relative;
+    font-family: var(--police);  
+    font-size: 26px;
+    font-weight: 500;
+    font-style: normal;
+    color: var(--menu-color);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+}
+
+/* Soulignement de la page active */
+
+body.page-interne .site-navigation a[aria-current="page"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background-color: var(--menu-color);
+}
+
+/* Survol du menu */
+
+body.page-interne .site-navigation a:hover {
+    opacity: 0.6;
+}
+
+/* ==========================================
+   4. CONTENU PRINCIPAL
+========================================== */
+
+body.page-interne .contact-page {
+    display: grid;
+    grid-template-columns: 32% 1fr;
+    align-items: stretch;
+    gap: 40px;
+    width: 100%;
+    padding: 20px 2% 30px;
+}
+
+/* ==========================================
+   5. COLONNE DE GAUCHE
+========================================== */
+
+body.page-interne .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+}
+
+/* Blocs d'informations */
+
+body.page-interne .contact-block {
+    width: 100%;
+    padding: 0 10px 30px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #777;
+}
+
+/* Titres */
+
+body.page-interne .contact-block h1,
+body.page-interne .contact-block h2 {
+    margin: 0 0 12px;
+    font-family: var(--police);  
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+/* Texte de l'adresse et horaires */
+
+body.page-interne .contact-block p {
+    margin: 0;
+    font-family: var(--police);  
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+/* Trait sous Notre adresse */
+
+body.page-interne .separator {
+    width: 100%;
+    height: 1px;
+    background-color: #777;
+    margin: 28px 0 38px;
+}
+
+/* Adresse e-mail */
+
+body.page-interne .contact-block a {
+    font-family: var(--police);  
+    font-size: 26px;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+}
+
+body.page-interne .contact-block a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   6. CARTE GOOGLE MAPS
+========================================== */
+
+body.page-interne .contact-map {
+    width: 100%;
+    height: 540px;
+    overflow: hidden;
+    border: none;
+    position: relative;
+}
+
+body.page-interne .contact-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    border: 0;
+}
+
+/* ==========================================
+   7. VERSION TABLETTE
+========================================== */
+
+@media screen and (max-width: 1000px) {
+    body.page-interne .site-header {
+        height: 110px;
+    }
+
+    body.page-interne .site-navigation {
+        gap: 18px;
+    }
+
+    body.page-interne .site-navigation a {
+        font-size: 17px;
+    }
+
+    body.page-interne .contact-page {
+        grid-template-columns: 38% 1fr;
+        gap: 25px;
+    }
+
+    body.page-interne .contact-block h1,
+    body.page-interne .contact-block h2,
+    body.page-interne .contact-block p,
+    body.page-interne .contact-block a {
+        font-size: 20px;
+    }
+
+    body.page-interne .contact-map {
+        height: 450px;
+    }
+}
+
+/* ==========================================
+   8. VERSION MOBILE
+========================================== */
+
+@media screen and (max-width: 650px) {
+    body.page-interne .site-header {
+        height: auto;
+        padding: 25px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    body.page-interne .site-header .text-wrapper-8 {
+        font-size: 38px;
+    }
+
+    body.page-interne .site-navigation {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 15px;
+    }
+
+    body.page-interne .site-navigation a {
+        font-size: 14px;
+    }
+
+    body.page-interne .contact-page {
+        grid-template-columns: 1fr;
+        padding: 35px 5%;
+        gap: 25px;
+    }
+
+    body.page-interne .contact-block {
+        padding: 0 0 25px;
+        margin-bottom: 25px;
+    }
+
+    body.page-interne .contact-block h1,
+    body.page-interne .contact-block h2,
+    body.page-interne .contact-block p,
+    body.page-interne .contact-block a {
+        font-size: 18px;
+    }
+
+    body.page-interne .contact-map {
+        height: 350px;
+    }
+}
+
+/* ==========================================
+   PAGE 6 — REJOIGNEZ-NOUS
+========================================== */
+
+/* PARAMÈTRES GÉNÉRAUX */
+
+body.page-interne {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+
+body.page-interne {
+    background-color: #d8d2c8;
+    font-family: var(--police);  
+    color: #000;
+}
+
+body.page-interne .frame {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+}
+
+/* ==========================================
+   EN-TÊTE ET LOGO
+========================================== */
+
+/* Logo 404 ART */
+
+body.page-interne .social-logo {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    margin: 0;
+    flex-shrink: 0;
+    font-family: var(--police);   
+    font-size: 52px;
+    font-weight: 400;
+    line-height: 1;
+    color: #000;
+}
+
+/* Titre Rejoignez-nous */
+
+body.page-interne .social-header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+body.page-interne .social-header h1 {
+    font-family: var(--police);   
+    font-size: 42px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+
+/* ==========================================
+   CONTENU PRINCIPAL
+========================================== */
+
+body.page-interne .social-page {
+    position: relative;
+    width: 100%;
+    padding-bottom: 45px;
+}
+
+/* ==========================================
+   RÉSEAUX SOCIAUX
+========================================== */
+
+body.page-interne .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+    width: 100%;
+    margin: 15px 0 55px;
+    padding: 0;
+}
+
+body.page-interne .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    font-size: 38px;
+    color: #222;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+body.page-interne .social-links a:hover {
+    transform: translateY(-5px);
+}
+
+body.page-interne .social-links a:hover {
+    transform: translateY(-5px);
+}
+
+body.page-interne .social-links img {
+    display: block;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+/* ==========================================
+   GALERIE DE 8 PHOTOGRAPHIES
+========================================== */
+
+body.page-interne .social-gallery {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 45px;
+    row-gap: 55px;
+    width: 94%;
+    margin: 0 auto;
+}
+
+body.page-interne .social-gallery img {
+    display: block;
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+body.page-interne .social-gallery img:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   ENCADRÉ ROUGE NEWSLETTER
+========================================== */
+
+body.page-interne .newsletter {
+    position: absolute;
+    z-index: 5;
+    top: 255px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 505px;
+    max-width: 90%;
+    padding: 15px 20px 20px;
+    background-color: #a94d3b;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+/* Texte blanc */
+
+body.page-interne .newsletter h2 {
+    margin: 0 0 8px;
+    font-family: var(--police);  
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.25;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+}
+
+/* ==========================================
+   CHAMP EMAIL
+========================================== */
+
+body.page-interne .newsletter-form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 45px;
+    background-color: #dedede;
+    box-sizing: border-box;
+}
+
+body.page-interne .newsletter-form input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding: 0 15px;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: var(--police);  
+    font-size: 23px;
+    font-weight: 400;
+    color: #000;
+}
+
+body.page-interne .newsletter-form input::placeholder {
+    color: #000;
+    opacity: 1;
+}
+
+/* Flèche à droite */
+
+body.page-interne .newsletter-form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 100%;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 36px;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+body.page-interne .newsletter-form button:hover {
+    transform: translateX(4px);
+}
+
+/* Texte accessible masqué */
+
+body.page-interne .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* MENU DE NAVIGATION PRINCIPAL */
+
+body.page-interne .social-header nav a {
+    font-family: var(--police);  
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--menu-color);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+body.page-interne .social-header nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ==========================================
+   NAVIGATION VERS LES AUTRES PAGES
+========================================== */
+
+body.page-interne .navigation-pages {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 30px;
+    margin: 0 0 0 auto;
+    padding: 0;
+}
+
+body.page-interne .navigation-pages a {
+    font-family: var(--police);  
+    font-size: 16px;
+    font-weight: 500 !important;
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+body.page-interne .navigation-pages a:hover {
+    opacity: 0.6;
+    text-decoration: none;
+}
+
+/* ==========================================
+   VERSION TABLETTE
+========================================== */
+
+@media screen and (max-width: 900px) {
+    body.page-interne .social-logo {
+        font-size: 42px;
+    }
+
+    body.page-interne .social-header h1 {
+        font-size: 35px;
+    }
+
+    body.page-interne .social-gallery {
+        gap: 25px;
+    }
+
+    body.page-interne .social-gallery img {
+        height: 180px;
+    }
+
+    body.page-interne .newsletter {
+        top: 215px;
+        width: 440px;
+    }
+
+    body.page-interne .newsletter h2 {
+        font-size: 23px;
+    }
+}
+
+/* ==========================================
+   VERSION MOBILE
+========================================== */
+
+@media screen and (max-width: 600px) {
+    body.page-interne .social-header {
+        height: auto;
+        padding: 25px 5%;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    body.page-interne .social-logo {
+        position: static;
+        font-size: 38px;
+    }
+
+    body.page-interne .social-header h1 {
+        font-size: 32px;
+    }
+
+    body.page-interne .social-links {
+        gap: 25px;
+        margin: 20px 0 35px;
+    }
+
+    body.page-interne .social-links img {
+        width: 28px;
+        height: 28px;
+    }
+
+    body.page-interne .social-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 15px;
+    }
+
+    body.page-interne .social-gallery img {
+        height: 170px;
+    }
+
+    body.page-interne .newsletter {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        width: 94%;
+        max-width: none;
+        margin: 30px auto 0;
+    }
+
+    body.page-interne .newsletter h2 {
+        font-size: 20px;
+    }
+
+    body.page-interne .newsletter-form input {
+        font-size: 17px;
+    }
+
+    body.page-interne .navigation-pages {
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    body.page-interne .navigation-pages a {
+        font-size: 14px;
+    }
+}
+
