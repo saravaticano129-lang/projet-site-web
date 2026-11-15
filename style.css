@@ -1943,17 +1943,19 @@ body {
     font-size: 32px;
   }
 }
-.acceuil-page {
-   width: 100%;
-   min-height: 100vh;
-   padding: 0;
+.accueil-page {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0 !important;
 }
-.photoacceuil {
-   width: 100%;
-   height: 100vh;
-   min-height: 100vh;
-   background-image: url("img/photoacceuil.png");
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
+
+.photoaccueil {
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    background-image: url("img/photoaccueil.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
